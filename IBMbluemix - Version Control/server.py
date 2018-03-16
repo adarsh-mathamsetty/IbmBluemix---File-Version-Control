@@ -48,11 +48,9 @@ db=couch['test1']
 
 @app.route('/couchdb', methods=["GET","POST"])
 def dbupload():
-    print("a")
+  
     f=request.files['file']
-    print(f.filename)
     filecontent=f.stream.read()
-    print(filecontent)
     get_filename=[]
     get_hash=[]
     get_version=[]
@@ -64,7 +62,7 @@ def dbupload():
         get_filename.append(doc["filename"])
         get_hash.append(doc['hash'])
         get_version.append(doc['version'])
-        print("d")
+        
 
     if f.filename not in get_filename :
 
